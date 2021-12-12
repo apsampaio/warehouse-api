@@ -1,4 +1,4 @@
-# Notes
+# 📝 Notes
 
 ### 🎉 Creating Project:
 
@@ -17,3 +17,15 @@ dotnet run
 ```shell
 dotnet nuget add source https://api.nuget.org/v3/index.json
 ```
+
+# 👣 Steps
+
+- [x] Create Project
+- [x] Configure Debugging Settings
+- [x] Create Entities
+- [x] Create Repositories
+- [ ] Add Database
+- [ ] Create Controllers
+- [ ] Create Tests
+- [ ] Create Logging
+- [ ] Deploy
