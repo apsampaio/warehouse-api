@@ -30,8 +30,16 @@ dotnet add package Microsoft.Data.Sqlite
 - [x] Configure Debugging Settings
 - [x] Create Entities
 - [x] Create Repositories
-- [ ] Add Database
+- [x] Add Database
+  - [x] Add Packages (EntityFrameworkCore, EntityFrameworkCore.Sqlite, Microsoft.Data.Sqlite)
+  - [x] Create Context
+  - [x] Add Service to Startup
 - [ ] Create Controllers
+  - [ ] CreateItem
+  - [ ] GetItems
+  - [ ] GetItem
+  - [ ] UpdateItem
+  - [ ] DeleteItem
 - [ ] Create Tests
 - [ ] Create Logging
 - [ ] Deploy

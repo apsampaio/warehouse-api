@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 using Warehouse.Entities;
-using Warehouse.Database;
-
+using Warehouse.Dtos;
+using Warehouse.Repositories;
+using System;
 using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 
 
 namespace Warehouse.Controllers
@@ -14,14 +14,37 @@ namespace Warehouse.Controllers
     [Route("items")]
     public class ItemsController : ControllerBase
     {
-        private readonly SQLiteContext dbContext = new SQLiteContext();
 
+        private readonly IItemsRepository repository;
 
+        public ItemsController(IItemsRepository repository)
+        {
+            this.repository = repository;
+        }
+
+        // POST - /items
+        [HttpPost]
+        public async Task CreateItem(CreateItemDto item)
+        {
+            Item newItem = new()
+            {
+                Id = Guid.NewGuid(),
+                Name = item.Name,
+                Quantity = item.Quantity,
+                Type = item.Type,
+                Image = item.Image,
+                CreatedAt = DateTimeOffset.UtcNow,
+                UpdatedAt = DateTimeOffset.UtcNow,
+            };
+
+            await this.repository.CreateItemAsync(newItem);
+        }
+
+        // GET - /items
         [HttpGet]
         public async Task<IEnumerable<Item>> GetItemsAsync()
         {
-            var items = await this.dbContext.items.ToListAsync();
-            return items;
+            return await this.repository.GetItemsAsync();
         }
 
     }

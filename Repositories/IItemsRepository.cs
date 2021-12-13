@@ -2,6 +2,7 @@ using System;
 using Warehouse.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Warehouse.Dtos;
 
 namespace Warehouse.Repositories
 {
@@ -10,9 +11,9 @@ namespace Warehouse.Repositories
     {
         Item GetItem(Guid id);
         Task<IEnumerable<Item>> GetItemsAsync();
-        void CreateItem(Item item);
-        void UpdateItem(Item item);
-        void DeleteItem(Guid id);
+        Task CreateItemAsync(Item item);
+        Task UpdateItem(Item item);
+        Task DeleteItem(Guid id);
     }
 
 }

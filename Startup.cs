@@ -15,6 +15,7 @@ using Microsoft.OpenApi.Models;
 using Warehouse.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Data.Sqlite;
+using Warehouse.Repositories;
 
 namespace Warehouse
 {
@@ -33,7 +34,7 @@ namespace Warehouse
 
             services.AddEntityFrameworkSqlite().AddDbContext<SQLiteContext>();
 
-            // services.AddDbContext<SQLiteContext>(options => options.UseSqlite(Configuration.GetConnectionString("ConnectionSQLite")));
+            services.AddSingleton<IItemsRepository, ItemsRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
