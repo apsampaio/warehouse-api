@@ -34,12 +34,13 @@ dotnet add package Microsoft.Data.Sqlite
   - [x] Add Packages (EntityFrameworkCore, EntityFrameworkCore.Sqlite, Microsoft.Data.Sqlite)
   - [x] Create Context
   - [x] Add Service to Startup
-- [ ] Create Controllers
+- [x] Create Controllers
   - [x] CreateItem
   - [x] GetItems
   - [x] GetItem
-  - [ ] UpdateItem
-  - [ ] DeleteItem
+  - [x] UpdateItem
+  - [x] DeleteItem
 - [ ] Create Tests
 - [ ] Create Logging
+- [ ] Update Routes Params ✨
 - [ ] Deploy
