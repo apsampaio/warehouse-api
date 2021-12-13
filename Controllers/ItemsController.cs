@@ -24,7 +24,7 @@ namespace Warehouse.Controllers
 
         // POST - /items
         [HttpPost]
-        public async Task CreateItem(CreateItemDto item)
+        public async Task<ActionResult<Item>> CreateItem(CreateItemDto item)
         {
             Item newItem = new()
             {
@@ -38,6 +38,7 @@ namespace Warehouse.Controllers
             };
 
             await this.repository.CreateItemAsync(newItem);
+            return CreatedAtAction(nameof(GetItemAsync), new { id = newItem.Id }, item);
         }
         // GET - /items
         [HttpGet]
