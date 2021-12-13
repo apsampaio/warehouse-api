@@ -20,9 +20,10 @@ namespace Warehouse.Repositories
             await this.dbContext.SaveChangesAsync();
         }
 
-        public Task DeleteItem(Guid id)
+        public async Task DeleteItemAsync(Item item)
         {
-            throw new NotImplementedException();
+            this.dbContext.items.Remove(item);
+            await this.dbContext.SaveChangesAsync();
         }
 
         public async Task<Item> GetItemAsync(Guid id)

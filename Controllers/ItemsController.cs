@@ -83,5 +83,20 @@ namespace Warehouse.Controllers
 
             return NoContent();
         }
+        // DELETE - /items/{id}
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteItemAsync(Guid id)
+        {
+            var item = await this.repository.GetItemAsync(id);
+
+            if (item is null)
+            {
+                return NotFound();
+            }
+
+            await this.repository.DeleteItemAsync(item);
+
+            return NoContent();
+        }
     }
 }
