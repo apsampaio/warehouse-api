@@ -18,6 +18,12 @@ dotnet run
 dotnet nuget add source https://api.nuget.org/v3/index.json
 ```
 
+### 🪑 SQLite Package
+
+```shell
+dotnet add package Microsoft.Data.Sqlite
+```
+
 # 👣 Steps
 
 - [x] Create Project
