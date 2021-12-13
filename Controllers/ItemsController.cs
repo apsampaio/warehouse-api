@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 
-using Warehouse.Repositories;
 using Warehouse.Entities;
 using Warehouse.Database;
 
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+
 
 namespace Warehouse.Controllers
 {
@@ -14,11 +16,13 @@ namespace Warehouse.Controllers
     {
         private readonly SQLiteContext dbContext = new SQLiteContext();
 
+
         [HttpGet]
-        public Item GetItems()
+        public async Task<IEnumerable<Item>> GetItemsAsync()
         {
-            var items = this.dbContext.Items.Find();
+            var items = await this.dbContext.items.ToListAsync();
             return items;
         }
+
     }
 }

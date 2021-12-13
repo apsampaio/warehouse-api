@@ -13,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 using Warehouse.Database;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.Sqlite;
 
 namespace Warehouse
 {
@@ -30,6 +32,8 @@ namespace Warehouse
         {
 
             services.AddEntityFrameworkSqlite().AddDbContext<SQLiteContext>();
+
+            // services.AddDbContext<SQLiteContext>(options => options.UseSqlite(Configuration.GetConnectionString("ConnectionSQLite")));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

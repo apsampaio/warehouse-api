@@ -1156,19 +1156,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\T-Gamer\\.nuget\\packages\\": {}
+    "C:\\Users\\saoapint\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\C#\\Warehouse\\Warehouse.csproj",
+      "projectUniqueName": "C:\\projetos\\warehouse-api\\Warehouse.csproj",
       "projectName": "Warehouse",
-      "projectPath": "D:\\GitHub\\C#\\Warehouse\\Warehouse.csproj",
-      "packagesPath": "C:\\Users\\T-Gamer\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\C#\\Warehouse\\obj\\",
+      "projectPath": "C:\\projetos\\warehouse-api\\Warehouse.csproj",
+      "packagesPath": "C:\\Users\\saoapint\\.nuget\\packages\\",
+      "outputPath": "C:\\projetos\\warehouse-api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\T-Gamer\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\saoapint\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -1227,7 +1227,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
