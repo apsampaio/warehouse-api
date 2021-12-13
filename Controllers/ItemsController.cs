@@ -38,7 +38,7 @@ namespace Warehouse.Controllers
             };
 
             await this.repository.CreateItemAsync(newItem);
-            return CreatedAtAction(nameof(GetItemAsync), new { id = newItem.Id }, item);
+            return CreatedAtAction(nameof(GetItemAsync), new { id = newItem.Id }, newItem);
         }
         // GET - /items
         [HttpGet]
@@ -58,6 +58,30 @@ namespace Warehouse.Controllers
             }
 
             return item;
+        }
+        // PUT - /items/{id}
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateItemAsync(Guid id, UpdateItemDto updateItemDto)
+        {
+            var item = await this.repository.GetItemAsync(id);
+
+            if (item is null)
+            {
+                return NotFound();
+            }
+
+            Item updatedItem = item with
+            {
+                Name = updateItemDto.Name ?? item.Name,
+                Image = updateItemDto.Image ?? item.Image,
+                Quantity = updateItemDto.Quantity,
+                UpdatedAt = DateTimeOffset.UtcNow
+            };
+
+
+            await this.repository.UpdateItemAsync(item, updatedItem);
+
+            return NoContent();
         }
     }
 }

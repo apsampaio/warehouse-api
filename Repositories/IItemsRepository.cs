@@ -12,7 +12,7 @@ namespace Warehouse.Repositories
         Task<Item> GetItemAsync(Guid id);
         Task<IEnumerable<Item>> GetItemsAsync();
         Task CreateItemAsync(Item item);
-        Task UpdateItem(Item item);
+        Task UpdateItemAsync(Item item, Item updatedItem);
         Task DeleteItem(Guid id);
     }
 

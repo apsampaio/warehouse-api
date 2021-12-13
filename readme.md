@@ -37,7 +37,7 @@ dotnet add package Microsoft.Data.Sqlite
 - [ ] Create Controllers
   - [x] CreateItem
   - [x] GetItems
-  - [ ] GetItem
+  - [x] GetItem
   - [ ] UpdateItem
   - [ ] DeleteItem
 - [ ] Create Tests

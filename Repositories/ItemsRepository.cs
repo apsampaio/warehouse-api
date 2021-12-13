@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Warehouse.Entities;
 using Warehouse.Database;
 using Microsoft.EntityFrameworkCore;
+using Warehouse.Dtos;
 
 namespace Warehouse.Repositories
 {
@@ -26,7 +27,7 @@ namespace Warehouse.Repositories
 
         public async Task<Item> GetItemAsync(Guid id)
         {
-            return await this.dbContext.items.FindAsync(id);
+            return await this.dbContext.items.FirstOrDefaultAsync(item => item.Id == id);
         }
 
         public async Task<IEnumerable<Item>> GetItemsAsync()
@@ -35,9 +36,10 @@ namespace Warehouse.Repositories
             return items;
         }
 
-        public Task UpdateItem(Item item)
+        public async Task UpdateItemAsync(Item item, Item updatedItem)
         {
-            throw new NotImplementedException();
+            this.dbContext.Entry(item).CurrentValues.SetValues(updatedItem);
+            await this.dbContext.SaveChangesAsync();
         }
     }
 }
