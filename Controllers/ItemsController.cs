@@ -39,13 +39,24 @@ namespace Warehouse.Controllers
 
             await this.repository.CreateItemAsync(newItem);
         }
-
         // GET - /items
         [HttpGet]
         public async Task<IEnumerable<Item>> GetItemsAsync()
         {
             return await this.repository.GetItemsAsync();
         }
+        // GET - /items/{id}
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Item>> GetItemAsync(Guid id)
+        {
+            var item = await this.repository.GetItemAsync(id);
 
+            if (item is null)
+            {
+                return NotFound();
+            }
+
+            return item;
+        }
     }
 }

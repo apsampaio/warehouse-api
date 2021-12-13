@@ -24,9 +24,9 @@ namespace Warehouse.Repositories
             throw new NotImplementedException();
         }
 
-        public Item GetItem(Guid id)
+        public async Task<Item> GetItemAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await this.dbContext.items.FindAsync(id);
         }
 
         public async Task<IEnumerable<Item>> GetItemsAsync()

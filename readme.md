@@ -35,8 +35,8 @@ dotnet add package Microsoft.Data.Sqlite
   - [x] Create Context
   - [x] Add Service to Startup
 - [ ] Create Controllers
-  - [ ] CreateItem
-  - [ ] GetItems
+  - [x] CreateItem
+  - [x] GetItems
   - [ ] GetItem
   - [ ] UpdateItem
   - [ ] DeleteItem

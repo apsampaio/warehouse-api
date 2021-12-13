@@ -9,7 +9,7 @@ namespace Warehouse.Repositories
 
     public interface IItemsRepository
     {
-        Item GetItem(Guid id);
+        Task<Item> GetItemAsync(Guid id);
         Task<IEnumerable<Item>> GetItemsAsync();
         Task CreateItemAsync(Item item);
         Task UpdateItem(Item item);
